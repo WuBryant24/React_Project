@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import pic from './pic.png';
 import './App.css';
 import ReactDOM from 'react-dom';
-import Line from './line';
-// import Circle from './circle';
 
 class App extends Component {
 
@@ -93,22 +91,17 @@ class App extends Component {
           changeHeight: this.state.picheight,
         })
       }
-
       console.log('縮小')
     }
   }
 
   render() {
-    // let a = this.state.dataa;
     return (
       <div onClick={this.onClick} >
         <header className="App-header">
           <div onWheel={this.onWheel} >
             < img src={pic} width={this.state.changeWidth} height={this.state.changeHeight} alt="golf" onMouseDown={e => this.onMouseDown(e)}
               style={{ transform: `translateX(${this.state.translateX}px)translateY(${this.state.translateY}px)` }} />
-            {/* <Line/> */}
-            {/* <Circle /> */}
-
           </div>
         </header>
       </div >
@@ -116,5 +109,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<Line/>, document.getElementById("root"));
 export default App;
